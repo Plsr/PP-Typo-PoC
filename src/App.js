@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
+import { Tabs, TabItem } from 'react-foundation';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <TabNavigation />
       </div>
     );
+  }
+}
+
+class TabNavigation extends Component {
+  render() {
+    return (
+      <Tabs>
+        <TabItem><a href="#panel1" aria-selected="true">Tab 1</a></TabItem>
+        <TabItem><a href="#panel2">Tab 2</a></TabItem>
+      </Tabs>
+    )
   }
 }
 
