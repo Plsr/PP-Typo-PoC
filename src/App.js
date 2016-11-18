@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-import { Tabs, TabItem } from 'react-foundation';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 class App extends Component {
   render() {
@@ -15,11 +15,35 @@ class App extends Component {
 class TabNavigation extends Component {
   render() {
     return (
-      <Tabs>
-        <TabItem><a href="#panel1" aria-selected="true">Tab 1</a></TabItem>
-        <TabItem><a href="#panel2">Tab 2</a></TabItem>
+      <Tabs
+        onSelect={this.handleSelect}
+        selectedIndex={2}
+      >
+        <TabList>
+          <Tab>Body</Tab>
+          <Tab>Headline 1</Tab>
+          <Tab>Headline 2</Tab>
+          <Tab>Headline 3</Tab>
+          <Tab>Colors</Tab>
+        </TabList>
+
+        <TabPanel>
+          <h2>Hello from Body</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Hello from Headline 1</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Hello from Headline 2</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Hello from Headline 3</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Hello from Colors</h2>
+        </TabPanel>
       </Tabs>
-    )
+    );
   }
 }
 
