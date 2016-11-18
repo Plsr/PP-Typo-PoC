@@ -12,6 +12,7 @@
     "sass": "^0.5.0"
   },
   "dependencies": {
+    "foundation-sites": "^6.2.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-foundation": "^0.7.0"
