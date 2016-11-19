@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Headline extends Component {
   render() {
     var cssStyles = {
-      fontSize: this.props.fontSize,
-      marginTop: this.props.marginTop,
-      marginBottom: this.props.marginBottom
+      fontSize: this.props.fontSize + "px",
+      marginTop: this.props.marginTop + "px",
+      marginBottom: this.props.marginBottom + "px"
     }
 
     return(

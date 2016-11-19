@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       fontFamily: 'Arial',
-      bodyFontSize: '22',
+      bodyFontSize: '16',
       lineHeight: '26',
       bodyWidth: '600',
       h1Size: '36',
@@ -34,7 +34,7 @@ class App extends Component {
             <TabNavigation
               fontFamily={this.state.fontFamily}
               bodyFontSize={this.state.bodyFontSize}
-              lineheight={this.state.lineHeight}
+              lineHeight={this.state.lineHeight}
               bodyWidth={this.state.bodyWidth}
               h1Size={this.state.h1Size}
               h1MarginTop={this.state.h1MarginTop}
@@ -55,7 +55,7 @@ class App extends Component {
             <RenderedText
               fontFamily={this.state.fontFamily}
               bodyFontSize={this.state.bodyFontSize}
-              lineheight={this.state.lineHeight}
+              lineHeight={this.state.lineHeight}
               bodyWidth={this.state.bodyWidth}
               h1Size={this.state.h1Size}
               h1MarginTop={this.state.h1MarginTop}
