@@ -5,7 +5,7 @@ class DropdownMenu extends Component {
   render() {
     return(
       <Column small={12}>
-        <select>
+        <select defaultValue={this.props.selected}>
           {this.props.options.map(function(option) {
             return <option value={option} key={option}>{option}</option>
           })}

@@ -5,7 +5,7 @@ import Paragraph from './ParagraphElement.js';
 class TextContainer extends Component {
   render() {
     var cssStyles = {
-      width: this.props.width
+      width: this.props.bodyWidth
     }
 
     return(

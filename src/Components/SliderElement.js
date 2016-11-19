@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Column } from 'react-foundation';
 
 class SliderElement extends Component {
-  // TODO: Remove 'px' from value property
   render() {
     return (
       <Column small={12}>

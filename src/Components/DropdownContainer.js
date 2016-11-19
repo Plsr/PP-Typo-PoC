@@ -8,7 +8,7 @@ class DropdownContainer extends Component {
     return(
       <Column small={this.props.size}>
         <ContainerHeadline name={this.props.name} />
-        <DropdownMenu options={this.props.options} />
+        <DropdownMenu options={this.props.options} selected={this.props.selected} />
       </Column>
     );
   }

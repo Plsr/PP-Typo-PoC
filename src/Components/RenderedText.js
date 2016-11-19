@@ -6,7 +6,7 @@ class RenderedText extends Component {
   render() {
     return (
       <Column small={12}>
-        <TextContainer width={this.props.width} bodyFontSize={this.props.bodyFontSize} />
+        <TextContainer bodyWidth={this.props.bodyWidth} bodyFontSize={this.props.bodyFontSize} />
       </Column>
     );
   }
