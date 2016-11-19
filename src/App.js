@@ -8,17 +8,33 @@ var FaClose = require('react-icons/lib/fa/close');
 var FaCheck = require('react-icons/lib/fa/check');
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bodyFontSize: '22px',
+      lineHeight: '26px',
+      bodyWidth: '600px'
+    };
+  }
+
   render() {
     return (
       <div className="App">
         <Row className="display">
           <Column small={12}>
-            <TabNavigation />
+            <TabNavigation
+              bodyFontSize={this.state.bodyFontSize}
+              lineheight={this.state.lineHeight}
+              bodyWidth={this.state.bodyWidth}
+            />
           </Column>
         </Row>
         <Row className="display">
           <Column small={12}>
-            <RenderedText />
+            <RenderedText
+              bodyFontSize={this.state.bodyFontSize}
+              width={this.state.bodyWidth}
+            />
           </Column>
         </Row>
       </div>
@@ -30,7 +46,7 @@ class RenderedText extends Component {
   render() {
     return (
       <Column small={12}>
-        <TextContainer width={"500px"} />
+        <TextContainer width={this.props.width} bodyFontSize={this.props.bodyFontSize} />
       </Column>
     )
   }
@@ -45,7 +61,7 @@ class TextContainer extends Component {
     return(
       <div className="text-container" style={cssStyles}>
         <Headline1 fontSize={"36px"} marginTop={"30px"} marginBottom={"10px"} />
-        <Paragraph fontSize={"16px"} lineHeight={"24px"} />
+        <Paragraph fontSize={this.props.bodyFontSize} lineHeight={"24px"} />
         <Headline2 fontSize={"24px"} marginTop={"20px"} marginBottom={"10px"} />
         <Paragraph fontSize={"16px"} lineHeight={"24px"} />
         <Headline3 fontSize={"18px"} marginTop={"15px"} marginBottom={"10px"} />
@@ -126,7 +142,7 @@ class TabNavigation extends Component {
 
         <TabPanel>
           <DropdownContainer name={'Schriftart'} size={3} options={['Times new Roman', 'Verdana', 'Helvetica']} />
-          <SizeAdjustmentContainer name={'Schriftgröße'} value={"16"} size={3} />
+          <SizeAdjustmentContainer name={'Schriftgröße'} value={this.props.bodyFontSize} size={3} />
           <SizeAdjustmentContainer name={'Zeilenhöhe'} value={"24"} keep={true} size={3} />
           <SizeAdjustmentContainer name={'Laufweite'} value={"500"} keep={true} size={3} />
         </TabPanel>
@@ -249,6 +265,7 @@ class ContainerHeadline extends Component {
 }
 
 class SliderElement extends Component {
+  // TODO: Remove 'px' from value property
   render() {
     return (
       <Column small={12}>
