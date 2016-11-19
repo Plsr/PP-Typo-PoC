@@ -5,11 +5,15 @@ import SliderElement from './SliderElement.js'
 import KeepButton from './KeepButton.js'
 
 class SizeAdjustmentContainer extends Component {
+
   render() {
     return (
       <Column small={this.props.size}>
         <ContainerHeadline name={this.props.name} />
-        <SliderElement value={this.props.value} />
+        <SliderElement
+          value={this.props.value}
+          onChange={this.handleChange}
+        />
         <KeepButton keep={this.props.keep} />
       </Column>
     );

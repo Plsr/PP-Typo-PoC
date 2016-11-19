@@ -1,18 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Column } from 'react-foundation';
+import { changeFontFamily } from '../actions'
+import { connect } from 'react-redux'
 
-class DropdownMenu extends Component {
-  render() {
-    return(
-      <Column small={12}>
-        <select defaultValue={this.props.selected}>
-          {this.props.options.map(function(option) {
-            return <option value={option} key={option}>{option}</option>
-          })}
-        </select>
-      </Column>
-    );
-  }
+let DropdownMenu = ({ dispatch, selected, options }) => {
+
+  return(
+    <Column small={12}>
+      <select
+        defaultValue={selected}
+        onChange={e => {
+          e.preventDefault()
+          dispatch(changeFontFamily(e.target.value))}
+        }
+      >
+        {options.map(function(option) {
+          return <option value={option} key={option}>{option}</option>
+        })}
+      </select>
+    </Column>
+  );
 }
 
-export default DropdownMenu;
+export default connect()(DropdownMenu);

@@ -6,6 +6,7 @@ import ColorpickerContainer from './ColorpickerContainer.js'
 import WcagContainer from './WcagContainer.js'
 
 class TabNavigation extends Component {
+
   render() {
     return (
       <Tabs
