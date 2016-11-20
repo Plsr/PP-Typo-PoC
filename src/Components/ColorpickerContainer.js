@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Column } from 'react-foundation';
 import { ChromePicker } from 'react-color';
+import { changeValueForKey } from '../actions'
+import { connect } from 'react-redux'
 
-class ColorpickerContainer extends Component {
-  state = {
-    color: this.props.color
-  };
-
-  handleChangeComplete = (color) => {
-    this.setState({ background: color.hex });
-  };
-
-  render() {
-    return(
-      <Column small={this.props.size}>
-        <h2>{this.props.name}</h2>
-        <ChromePicker
-          color={ this.state.color }
-          onChangeComplete={ this.handleChangeComplete }
-        />
-      </Column>
-    );
+let ColorpickerContainer = ({ dispatch, size, name, color, stateKey }) => {
+  const handleChange = (color, event) => {
+    dispatch(changeValueForKey(stateKey, color.hex))
   }
+
+  return(
+    <Column small={ size }>
+      <h2>{ name }</h2>
+      <ChromePicker
+        color={ color }
+        onChange={handleChange}
+      />
+    </Column>
+  );
 }
 
-export default ColorpickerContainer;
+
+export default connect()(ColorpickerContainer);
