@@ -1,4 +1,4 @@
-import { CHANGE_FONT_FAMILY } from '../actions'
+import { CHANGE_FONT_FAMILY, CHANGE_VALUE_FOR_KEY } from '../actions'
 
 const initialState = {
   fontFamily: 'Times New Roman',
@@ -23,6 +23,10 @@ function typograhpyChanger(state = initialState, action) {
     case CHANGE_FONT_FAMILY:
       return Object.assign({}, state, {
         fontFamily: action.family
+      });
+    case CHANGE_VALUE_FOR_KEY:
+      return Object.assign({}, state, {
+        [action.key]: action.value
       });
     default:
       return state

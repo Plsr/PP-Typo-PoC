@@ -1,24 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Column } from 'react-foundation';
+import { changeValueForKey } from '../actions'
+import { connect } from 'react-redux'
 
-class SliderElement extends Component {
-
-  render() {
-    return (
-      <Column small={12}>
-        <input
-          type="range"
-          min="8"
-          max="48"
-          defaultValue={this.props.value}
-          step="1"
-          className="slider-element"
-          ref="slider"
-          onChange={this.handleChange}
-        />
-      </Column>
-    );
-  }
+let SliderElement = ({ dispatch, stateKey, value }) => {
+  return (
+    <Column small={12}>
+      <input
+        type="range"
+        min="8"
+        max="48"
+        defaultValue={value}
+        step="1"
+        className="slider-element"
+        onChange={e => {
+            e.preventDefault()
+            dispatch(changeValueForKey(stateKey, e.target.value))
+          }
+        }
+      />
+    </Column>
+  );
 }
 
-export default SliderElement;
+export default connect()(SliderElement);
