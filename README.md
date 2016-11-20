@@ -2,16 +2,17 @@
 **Disclaimer: Diese App ist Teil meines Praxisprojektes und fungiert als proof Of Concept eines der erarbeiteten Themengebiete**  
 
 ## Running the Project
-1. Clone the Projekt
+Clone the Projekt
 ```
 git clone https://github.com/Plsr/PP-Typo-PoC.git
 ```
 
-2. Install dependecies
+Install dependecies
 ```
 npm install
 ```
-3. Run Project
+
+Run Project
 ```
 npm run
 ```
