@@ -4,6 +4,7 @@ import DropdownContainer from './DropdownContainer.js'
 import SizeAdjustmentContainer from './SizeAdjustmentContainer.js'
 import ColorpickerContainer from './ColorpickerContainer.js'
 import WcagContainer from './WcagContainer.js'
+import { connect } from 'react-redux'
 
 class TabNavigation extends Component {
 
@@ -52,4 +53,13 @@ class TabNavigation extends Component {
   }
 }
 
-export default TabNavigation;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...state
+  };
+}
+
+export default TabNavigation = connect(
+  mapStateToProps
+)(TabNavigation)
+
