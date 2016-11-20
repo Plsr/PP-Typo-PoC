@@ -12,7 +12,6 @@ class TabNavigation extends Component {
     return (
       <Tabs
         onSelect={this.handleSelect}
-        selectedIndex={0}
       >
         <TabList>
           <Tab>Body</Tab>
@@ -24,28 +23,28 @@ class TabNavigation extends Component {
 
         <TabPanel>
           <DropdownContainer name={'Schriftart'} size={3} options={['Times new Roman', 'Verdana', 'Arial', 'Helvetica']} selected={this.props.fontFamily} />
-          <SizeAdjustmentContainer name={'Schriftgröße'} value={this.props.bodyFontSize} size={3} />
-          <SizeAdjustmentContainer name={'Zeilenhöhe'} value={this.props.lineHeight} keep={true} size={3} />
-          <SizeAdjustmentContainer name={'Laufweite'} value={this.props.bodyWidth} keep={true} size={3} />
+          <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"bodyFontSize"} value={this.props.bodyFontSize} size={3} />
+          <SizeAdjustmentContainer name={'Zeilenhöhe'} stateKey={"lineHeight"} value={this.props.lineHeight} keep={true} size={3} />
+          <SizeAdjustmentContainer name={'Laufweite'} stateKey={"bodyWidth"} value={this.props.bodyWidth} keep={true} size={3} />
         </TabPanel>
         <TabPanel>
-          <SizeAdjustmentContainer name={'Schriftgröße'} value={this.props.h1Size} size={4} />
-          <SizeAdjustmentContainer name={'Abstand oben'} value={this.props.h1MarginTop} size={4} />
-          <SizeAdjustmentContainer name={'Abstand unten'} value={this.props.h1MarginBottom} size={4} />
+          <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"h1Size"} value={this.props.h1Size} size={4} />
+          <SizeAdjustmentContainer name={'Abstand oben'} stateKey={"h1MarginTop"} value={this.props.h1MarginTop} size={4} />
+          <SizeAdjustmentContainer name={'Abstand unten'} stateKey={"h1MarginBottom"} value={this.props.h1MarginBottom} size={4} />
         </TabPanel>
         <TabPanel>
-          <SizeAdjustmentContainer name={'Schriftgröße'} value={this.props.h2Size} size={4} />
-          <SizeAdjustmentContainer name={'Abstand oben'} value={this.props.h2MarginTop} size={4} />
-          <SizeAdjustmentContainer name={'Abstand unten'} value={this.props.h2MarginBottom} size={4} />
+          <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"h2Size"} value={this.props.h2Size} size={4} />
+          <SizeAdjustmentContainer name={'Abstand oben'} stateKey={"h2MarginTop"} value={this.props.h2MarginTop} size={4} />
+          <SizeAdjustmentContainer name={'Abstand unten'} stateKey={"h2MarginBottom"} value={this.props.h2MarginBottom} size={4} />
         </TabPanel>
         <TabPanel>
-          <SizeAdjustmentContainer name={'Schriftgröße'} value={this.props.h3Size} size={4} />
-          <SizeAdjustmentContainer name={'Abstand oben'} value={this.props.h1MarginTop} size={4} />
-          <SizeAdjustmentContainer name={'Abstand unten'} value={this.props.h1MarginBottom} size={4} />
+          <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"h3Size"} value={this.props.h3Size} size={4} />
+          <SizeAdjustmentContainer name={'Abstand oben'} stateKey={"h1MarginTop"} value={this.props.h1MarginTop} size={4} />
+          <SizeAdjustmentContainer name={'Abstand unten'} stateKey={"h1MarginBottom"} value={this.props.h1MarginBottom} size={4} />
         </TabPanel>
         <TabPanel>
-          <ColorpickerContainer name={'Vordergrundfarbe'} color={this.props.fgColor} size={4} />
-          <ColorpickerContainer name={'Hintergrundfarbe'} color={this.props.bgColor} size={4} />
+          <ColorpickerContainer name={'Vordergrundfarbe'} stateKey={"fgColor"} color={this.props.fgColor} size={4} />
+          <ColorpickerContainer name={'Hintergrundfarbe'} stateKey={"bgColor"} color={this.props.bgColor} size={4} />
           <WcagContainer size={4} />
         </TabPanel>
       </Tabs>
