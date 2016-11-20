@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    ...state,
-    fontFamily: state.fontFamily
+    ...state
   };
 }
 
