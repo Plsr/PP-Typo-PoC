@@ -6,10 +6,9 @@ import hexRgb from 'hex-rgb';
 class WcagContainer extends Component {
 
 
-   // Check contrast of the two currently picked colors
-   // based on WCAG 2.0 G18
-   // https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20160317/G18
-
+  // Check contrast of the two currently picked colors
+  // based on WCAG 2.0 G18
+  // https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20160317/G18
   calculateRatio() {
     // Get currently set colors
     let bgColor = hexRgb(this.props.bgColor)
@@ -51,10 +50,6 @@ class WcagContainer extends Component {
       ratio = lumis[1];
     }
 
-    // Check the ratio of the lighter color
-    // To pass WCAG 2.0 AA it has to be at least 4.5
-    // To pass WCAG 2.0 AAA it has to be at least 7
-    console.log(ratio)
     return ratio
   };
 
