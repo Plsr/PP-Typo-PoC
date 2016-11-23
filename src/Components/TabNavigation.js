@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import DropdownContainer from './DropdownContainer.js'
 import SizeAdjustmentContainer from './SizeAdjustmentContainer.js'
 import ColorpickerContainer from './ColorpickerContainer.js'
 import WcagContainer from './WcagContainer.js'
 import { connect } from 'react-redux'
+import BodyTextOptions from './BodyTextOptions.js'
 
 class TabNavigation extends Component {
 
@@ -22,10 +22,7 @@ class TabNavigation extends Component {
         </TabList>
 
         <TabPanel>
-          <DropdownContainer name={'Schriftart'} size={3} options={['Times new Roman', 'Verdana', 'Arial', 'Helvetica']} selected={this.props.fontFamily} />
-          <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"bodyFontSize"} value={this.props.bodyFontSize} size={3} />
-          <SizeAdjustmentContainer name={'Zeilenhöhe'} stateKey={"lineHeight"} value={this.props.lineHeight} keep={true} size={3} />
-          <SizeAdjustmentContainer name={'Laufweite'} stateKey={"bodyWidth"} value={this.props.bodyWidth} keep={true} size={3} />
+          <BodyTextOptions />
         </TabPanel>
         <TabPanel>
           <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"h1Size"} value={this.props.h1Size} size={4} />
@@ -45,7 +42,7 @@ class TabNavigation extends Component {
         <TabPanel>
           <ColorpickerContainer name={'Vordergrundfarbe'} stateKey={"fgColor"} color={this.props.fgColor} size={4} />
           <ColorpickerContainer name={'Hintergrundfarbe'} stateKey={"bgColor"} color={this.props.bgColor} size={4} />
-          <WcagContainer size={4} />
+          <WcagContainer size={4} fgColor={this.props.fgColor} bgColor={this.props.bgColor} />
         </TabPanel>
       </Tabs>
     );

@@ -15,7 +15,13 @@ const initialState = {
   h3MarginTop: '20',
   h3MarginBottom: '10',
   bgColor: '#fff',
-  fgColor: '#000'
+  fgColor: '#000',
+  bodyTextOptions: {
+    fontFamily: 'Times New Roman',
+    bodyFontSize: '16',
+    lineHeight: '26',
+    bodyWidth: '600'
+  }
 }
 
 function typograhpyChanger(state = initialState, action) {
