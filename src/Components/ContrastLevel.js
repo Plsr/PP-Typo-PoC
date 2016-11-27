@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Column } from 'react-foundation';
+import { Column, Callout, Colors } from 'react-foundation';
 
 var FaClose = require('react-icons/lib/fa/close');
 var FaCheck = require('react-icons/lib/fa/check');
@@ -17,11 +17,25 @@ class ContrastLevel extends Component {
     }
   }
 
+  calloutColor() {
+    if (this.props.passing){
+      return(
+        Colors.SUCCESS
+      );
+    } else {
+      return (
+       Colors.ALERT
+      );
+    }
+  }
+
   render() {
     return(
       <Column small={12}>
-        { this.renderStateIcon() }
-        <span>Level {this.props.level}</span>
+        <Callout color={this.calloutColor()}>
+          { this.renderStateIcon() }
+          <span>Level {this.props.level}</span>
+        </Callout>
       </Column>
     );
   }
