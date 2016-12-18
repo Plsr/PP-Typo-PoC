@@ -793,4 +793,6 @@
 
 .a-calculation-text {
   white-space: nowrap;
-  display: inline; }
+  display: inline;
+  position: absolute;
+  top: -9999px; }
