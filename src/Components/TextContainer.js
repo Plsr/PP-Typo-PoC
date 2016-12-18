@@ -14,9 +14,9 @@ class TextContainer extends Component {
 
     return(
       <div className="text-container" style={cssStyles}>
-        <Headline fontSize={this.props.h1Size} marginTop={this.props.h1MarginTop} marginBottom={this.props.h1MarginBottom} />
+        <Headline fontSize={this.props.headline1Options.h1Size} marginTop={this.props.headline1Options.h1MarginTop} marginBottom={this.props.headline1Options.h1MarginBottom} />
         <Paragraph fontSize={this.props.bodyTextOptions.bodyFontSize} lineHeight={this.props.bodyTextOptions.lineHeight} />
-        <Headline fontSize={this.props.h2Size} marginTop={this.props.h2MarginTop} marginBottom={this.props.h2MarginBottom} />
+        <Headline fontSize={this.props.headline2Options.h2Size} marginTop={this.props.headline2Options.h2MarginTop} marginBottom={this.props.headline2Options.h2MarginBottom} />
         <Paragraph fontSize={this.props.bodyTextOptions.bodyFontSize} lineHeight={this.props.bodyTextOptions.lineHeight} />
         <Headline fontSize={this.props.h3Size} marginTop={this.props.h3MarginTop} marginBottom={this.props.h3MarginBottom} />
         <Paragraph fontSize={this.props.bodyTextOptions.bodyFontSize} lineHeight={this.props.bodyTextOptions.lineHeight} />

@@ -1,4 +1,4 @@
-import { CHANGE_FONT_FAMILY, CHANGE_VALUE_FOR_KEY, CHANGE_BODY_OPTIONS, UPDATE_BODY_WIDTH_CONSTRAINTS } from '../actions'
+import { CHANGE_FONT_FAMILY, CHANGE_VALUE_FOR_KEY, CHANGE_BODY_OPTIONS, UPDATE_BODY_WIDTH_CONSTRAINTS, CHANGE_HEADLINE1_OPTIONS, CHANGE_HEADLINE2_OPTIONS } from '../actions'
 
 const initialState = {
   fontFamily: 'Verdana',
@@ -16,6 +16,18 @@ const initialState = {
   h3MarginBottom: '16',
   bgColor: '#fff',
   fgColor: '#000',
+  headline1Options: {
+    h1Size: '36',
+    h1MarginTop: '66',
+    h1MarginBottom: '38',
+    errors: []
+  },
+  headline2Options: {
+    h2Size: '24',
+    h2MarginTop: '48',
+    h2MarginBottom: '24',
+    errors: []
+  },
   bodyTextOptions: {
     fontFamily: 'Verdana',
     bodyFontSize: '16',
@@ -46,6 +58,20 @@ function typograhpyChanger(state = initialState, action) {
       return Object.assign({}, state, {
         bodyTextOptions: {
           ...state.bodyTextOptions,
+          [action.key]: action.value
+        }
+      });
+    case CHANGE_HEADLINE1_OPTIONS:
+      return Object.assign({}, state, {
+        headline1Options: {
+          ...state.headline1Options,
+          [action.key]: action.value
+        }
+      });
+    case CHANGE_HEADLINE2_OPTIONS:
+      return Object.assign({}, state, {
+        headline2Options: {
+          ...state.headline2Options,
           [action.key]: action.value
         }
       });
