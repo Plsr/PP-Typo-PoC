@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Column } from 'react-foundation';
 import ContainerHeadline from './ContainerHeadline.js'
-import SliderElement from './SliderElement.js'
 import SliderElementExp from './SliderElementExp.js'
 import KeepButton from './KeepButton.js'
 
@@ -13,6 +12,8 @@ class SizeAdjustmentContainerExp extends Component {
         <SliderElementExp
           stateKey={this.props.stateKey}
           value={this.props.value}
+          minVal={this.props.minVal}
+          maxVal={this.props.maxVal}
           triggerAction={this.props.triggerAction}
           onChange={this.handleChange}
         />

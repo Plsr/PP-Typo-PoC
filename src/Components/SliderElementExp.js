@@ -1,15 +1,14 @@
 import React from 'react';
 import { Column } from 'react-foundation';
-import { changeValueForKey } from '../actions'
 import { connect } from 'react-redux'
 
-let SliderElementExp = ({ dispatch, stateKey, value, triggerAction }) => {
+let SliderElementExp = ({ dispatch, stateKey, value, minVal, maxVal, triggerAction }) => {
   return (
     <Column small={12}>
       <input
         type="range"
-        min="8"
-        max="48"
+        min={minVal}
+        max={maxVal}
         defaultValue={value}
         step="1"
         className="slider-element"
