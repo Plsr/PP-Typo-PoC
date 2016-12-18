@@ -14,7 +14,7 @@ let BodyTextOptions = ({ bodyTextOptions }) => {
       <DropdownContainer
         name={'Schriftart'}
         size={3}
-        options={['Times new Roman', 'Verdana', 'Arial', 'Helvetica']}
+        options={['Times New Roman', 'Verdana', 'Arial', 'Helvetica']}
         selected={bodyTextOptions.fontFamily}
       />
       <SizeAdjustmentContainerExp
@@ -47,7 +47,7 @@ let BodyTextOptions = ({ bodyTextOptions }) => {
         size={3}
       />
       {bodyTextOptions.errors.map(function(error, i) {
-        return <Column small='12'><Callout color={Colors.ALERT} key={i}>{error}</Callout></Column>
+        return <Column small={12} key={i}><Callout color={Colors.ALERT}>{error}</Callout></Column>
       })}
     </div>
   );
@@ -59,25 +59,26 @@ const mapStateToProps = (state, ownProps) => {
     ...state,
     bodyTextOptions: {
       ...state.bodyTextOptions,
-      errors: calculateErrors(state.bodyTextOptions)
+      errors: calculateErrors(state.bodyTextOptions, state.bodyWidthConstraints)
     }
   };
 }
 
-function calculateErrors(bodyTextOptions) {
+function calculateErrors(bodyTextOptions, bodyWidthConstraints) {
   var errors = []
   let bodyFontSize = bodyTextOptions.bodyFontSize
   let lineHeight = bodyTextOptions.lineHeight
+  let bodyWidth = bodyTextOptions.bodyWidth
+  let bodyMinWidth = bodyWidthConstraints.min
+  let bodyMaxWidth = bodyWidthConstraints.max
   var lineHeightPercentage = (lineHeight / bodyFontSize) * 100
 
   console.log(lineHeightPercentage) // DEBUG
 
   if(bodyFontSize < 9) {
-    console.log("TOO SAMLL")
     errors.push("Die Textgröße ist sehr klein und könnte schwer lesbar sein")
   }
   if(bodyFontSize > 24) {
-    console.log("TOO BIG")
     errors.push("Die Textgröße ist sehr groß und könnte schwer lesbar sein")
   }
   if(lineHeightPercentage < 120.0) {
@@ -85,6 +86,12 @@ function calculateErrors(bodyTextOptions) {
   }
   if(lineHeightPercentage > 180.0) {
     errors.push("Die Zeilenhöhe ist sehr hoch und könnte den Text schwer lesbar machen")
+  }
+  if(bodyWidth < bodyMinWidth) {
+    errors.push("Der Text ist sehr schmal und könnte dadurch schwerer lesbar sein")
+  }
+  if(bodyWidth > bodyMaxWidth) {
+    errors.push("Der Text ist sehr breit und könnte dadurch schwerer lesbar sein")
   }
   return errors
 }

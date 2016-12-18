@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import TabNavigation from './Components/TabNavigation.js';
 import RenderedText from './Components/RenderedText.js';
+import CalculationTextSnippet from './Components/CalculationTextSnippet.js'
 
 import typographyChanger from './reducers'
 
@@ -35,6 +36,7 @@ class App extends Component {
               <RenderedText />
             </Column>
           </Row>
+          <CalculationTextSnippet />
         </div>
       </Provider>
     );

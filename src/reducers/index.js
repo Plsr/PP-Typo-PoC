@@ -1,4 +1,4 @@
-import { CHANGE_FONT_FAMILY, CHANGE_VALUE_FOR_KEY, CHANGE_BODY_OPTIONS } from '../actions'
+import { CHANGE_FONT_FAMILY, CHANGE_VALUE_FOR_KEY, CHANGE_BODY_OPTIONS, UPDATE_BODY_WIDTH_CONSTRAINTS } from '../actions'
 
 const initialState = {
   fontFamily: 'Verdana',
@@ -17,11 +17,15 @@ const initialState = {
   bgColor: '#fff',
   fgColor: '#000',
   bodyTextOptions: {
-    fontFamily: 'Times New Roman',
+    fontFamily: 'Verdana',
     bodyFontSize: '16',
     lineHeight: '26',
-    bodyWidth: '600',
+    bodyWidth: '561',
     errors: []
+  },
+  bodyWidthConstraints: {
+    min: '521',
+    max: '602'
   }
 }
 
@@ -29,7 +33,10 @@ function typograhpyChanger(state = initialState, action) {
   switch (action.type) {
     case CHANGE_FONT_FAMILY:
       return Object.assign({}, state, {
-        fontFamily: action.family
+        bodyTextOptions: {
+          ...state.bodyTextOptions,
+          fontFamily: action.family
+        }
       });
     case CHANGE_VALUE_FOR_KEY:
       return Object.assign({}, state, {
@@ -42,6 +49,13 @@ function typograhpyChanger(state = initialState, action) {
           [action.key]: action.value
         }
       });
+    case UPDATE_BODY_WIDTH_CONSTRAINTS:
+      return Object.assign({}, state, {
+        bodyWidthConstraints: {
+          min: action.min,
+          max: action.max
+        }
+      })
     default:
       return state
   }

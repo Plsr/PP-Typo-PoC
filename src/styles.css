@@ -790,3 +790,7 @@
 
 .a-slider {
   width: 100%; }
+
+.a-calculation-text {
+  white-space: nowrap;
+  display: inline; }

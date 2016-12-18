@@ -6,7 +6,7 @@ class TextContainer extends Component {
   render() {
     var cssStyles = {
       width: this.props.bodyTextOptions.bodyWidth + "px",
-      fontFamily: this.props.fontFamily,
+      fontFamily: this.props.bodyTextOptions.fontFamily,
       color: this.props.fgColor,
       backgroundColor: this.props.bgColor,
       padding: "20px"
