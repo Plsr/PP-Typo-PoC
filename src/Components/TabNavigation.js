@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import BodyTextOptions from './BodyTextOptions.js'
 import Headline1Options from './Headline1Options.js'
 import Headline2Options from './Headline2Options.js'
+import Headline3Options from './Headline3Options.js'
 
 class TabNavigation extends Component {
 
@@ -33,9 +34,7 @@ class TabNavigation extends Component {
           <Headline2Options />
         </TabPanel>
         <TabPanel>
-          <SizeAdjustmentContainer name={'Schriftgröße'} stateKey={"h3Size"} value={this.props.h3Size} size={4} />
-          <SizeAdjustmentContainer name={'Abstand oben'} stateKey={"h1MarginTop"} value={this.props.h1MarginTop} size={4} />
-          <SizeAdjustmentContainer name={'Abstand unten'} stateKey={"h1MarginBottom"} value={this.props.h1MarginBottom} size={4} />
+          <Headline3Options />
         </TabPanel>
         <TabPanel>
           <ColorpickerContainer name={'Vordergrundfarbe'} stateKey={"fgColor"} color={this.props.fgColor} size={4} />

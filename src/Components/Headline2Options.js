@@ -4,6 +4,7 @@ import SizeAdjustmentContainer from './SizeAdjustmentContainer.js'
 import SizeAdjustmentContainerExp from './SizeAdjustmentContainerExp.js'
 import { changeHeadline2Option } from '../actions'
 import { Column, Callout, Colors } from 'react-foundation';
+import { getClosestValueFromScale } from '../helpers'
 import React from 'react';
 
 let Headline1Options = ({ headline2Options }) => {
@@ -64,7 +65,6 @@ function calculateErrors(headline2Options, bodyTextOptions, h1Size) {
   let marginBottom = headline2Options.h2MarginBottom
   let typographicScale = [6,7,8,9,10,11,12,14,16,18,21,24,36,48,60,72]
   let h1ScalePos = getClosestValueFromScale(h1Size, typographicScale)
-  let h1ScaleValue = typographicScale[h1ScalePos]
   let h2ScaleValue = typographicScale[h1ScalePos - 1]
 
   if(h2Size > h1Size) {
@@ -89,34 +89,6 @@ function calculateErrors(headline2Options, bodyTextOptions, h1Size) {
     errors.push("Headline 2 hat einen sehr kleinen Abstand nach oben")
   }
   return errors
-}
-
-function getClosestValueFromScale (exactValue, array) {
-  for (var i = 0; i < array.length; i++) {
-
-      if(array[i] == exactValue) {
-        return i
-      }
-      // Check if the next bigger number was found
-      if(array[i] > exactValue) {
-        var upper = array[i]
-        var lower = array[i - 1]
-
-        // Calculate differences to upper and lower neighbour
-        var upperDiff = upper - exactValue
-        var lowerDiff = exactValue - lowerDiff
-
-        // Determine which neighbour is the closest
-        if(upperDiff > lowerDiff) {
-          return i - 1
-        } else {
-          return i
-        }
-      }
-    }
-
-    // Return null if no match was found
-    return null;
 }
 
 export default connect(
