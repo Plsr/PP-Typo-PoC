@@ -11,7 +11,7 @@ let SliderElementExp = ({ dispatch, stateKey, value, minVal, maxVal, triggerActi
         max={maxVal}
         defaultValue={value}
         step="1"
-        className="slider-element"
+        className="a-slider"
         onChange={e => {
             e.preventDefault()
             dispatch(triggerAction(stateKey, e.target.value))

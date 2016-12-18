@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Column } from 'react-foundation';
 import ContainerHeadline from './ContainerHeadline.js'
 import SliderElement from './SliderElement.js'
-import KeepButton from './KeepButton.js'
 
 class SizeAdjustmentContainer extends Component {
   render() {
@@ -14,7 +13,6 @@ class SizeAdjustmentContainer extends Component {
           value={this.props.value}
           onChange={this.handleChange}
         />
-        <KeepButton keep={this.props.keep} />
       </Column>
     );
   }

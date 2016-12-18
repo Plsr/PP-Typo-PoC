@@ -787,3 +787,6 @@
 
 * {
   box-sizing: border-box; }
+
+.a-slider {
+  width: 100%; }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Column } from 'react-foundation';
 import ContainerHeadline from './ContainerHeadline.js'
 import SliderElementExp from './SliderElementExp.js'
-import KeepButton from './KeepButton.js'
+import ValueDisplay from './ValueDisplay.js'
 
 class SizeAdjustmentContainerExp extends Component {
   render() {
@@ -17,7 +17,7 @@ class SizeAdjustmentContainerExp extends Component {
           triggerAction={this.props.triggerAction}
           onChange={this.handleChange}
         />
-        <KeepButton keep={this.props.keep} />
+        <ValueDisplay value={this.props.value} />
       </Column>
     );
   }
