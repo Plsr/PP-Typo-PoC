@@ -64,6 +64,7 @@
     "react-icons": "^2.2.1",
     "react-redux": "^4.4.6",
     "react-tabs": "^0.8.2",
+    "redux": "^3.6.0",
     "redux-logger": "^2.7.4"
   },
   "scripts": {
